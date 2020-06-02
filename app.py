@@ -14,9 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'raju'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
 
 # config JWT to expire within half an hour
 app.config['JWT_EXPIRATION_DELTA'] = datetime.timedelta(seconds=1800)
